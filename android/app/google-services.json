@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "94307792107",
+    "project_id": "qanun-ed687",
+    "storage_bucket": "qanun-ed687.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94307792107:android:0f353a1aeae9ba9509baae",
+        "android_client_info": {
+          "package_name": "com.example.sardam"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhmhN0qCb0-c5ImMioIhEj-fcOXMEuKjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94307792107:android:3a7b759033fc4efc09baae",
+        "android_client_info": {
+          "package_name": "com.qanwn.qanwnapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhmhN0qCb0-c5ImMioIhEj-fcOXMEuKjE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
