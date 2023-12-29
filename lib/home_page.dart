@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:qanwnapp/rule_page.dart';
+import 'package:qanwnapp1/rule_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,18 +11,18 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<Map<String, dynamic>> rules = [
-    {
-      'text': 'دەستوور',
-      'info': 'Rule 1 jshdjsds',
-      'rules': [
-        {
-          'title': 'ماددەی١',
-          'content': "پیک هاتوە لەمشتانە قادگهفژگژزفههگکنکفگدگفهفگدسفسدگ"
-        },
-        {'title': 'title2', 'content': "content2"},
-        {'title': 'title3', 'content': "content3"}
-      ]
-    },
+    //{
+      //'text': 'دەستوور',
+      //'info': 'Rule 1 jshdjsds',
+      //'rules': [
+        //{
+          //'title': 'ماددەی١',
+         // 'content': "پیک هاتوە لەمشتانە قادگهفژگژزفههگکنکفگدگفهفگدسفسدگ"
+       // },
+        //{'title': 'title2', 'content': "content2"},
+        //{'title': 'title3', 'content': "content3"}
+      //]
+    //},
     // {
     //   'text': 'قانون',
     //   'info': 'Rule 2 jshdjsds',
@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
     //   'info': 'Rule 5 jshdjsds',
     // },
   ];
-
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -122,10 +122,9 @@ class _HomePageState extends State<HomePage> {
                         return Center(
                           child: Text(
                             '${snapshot.error} occurred',
-                            style: const TextStyle(fontSize: 18, color: Colors.white),
-
+                            style: const TextStyle(
+                                fontSize: 18, color: Colors.white),
                           ),
-                         
                         );
 
                         // if we got our data

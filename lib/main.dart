@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:qanwnapp/favorite_page.dart';
-import 'package:qanwnapp/home_page.dart';
-import 'package:qanwnapp/lawyers.dart';
-import 'package:qanwnapp/menu_page.dart';
+import 'package:qanwnapp1/court.dart';
+import 'package:qanwnapp1/home_page.dart';
+import 'package:qanwnapp1/lawyers.dart';
+import 'package:qanwnapp1/menu_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -32,13 +32,14 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// ignore: use_key_in_widget_constructors
 class BottomNavigation extends StatefulWidget {
   @override
   State<BottomNavigation> createState() => _BottomNavigationState();
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  List<Widget> pages = [const HomePage(), const Lawyer(), menuPage()];
+  List<Widget> pages = [const HomePage(), const Lawyer(), const menuPage(),const court()];
 
   int _index = 0;
 
@@ -48,6 +49,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
@@ -64,7 +66,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
                 height: 30,
                 color: const Color(0xffEABF4E),
               ),
-              label: 'یاساکان',
+              label: 'پارێزەران',
             ),
             BottomNavigationBarItem(
                 icon: Image.asset(
@@ -72,10 +74,10 @@ class _BottomNavigationState extends State<BottomNavigation> {
                   height: 30,
                   color: const Color(0xffEABF4E),
                 ),
-                label: 'weee')
+                label: 'دادگاکان')
           ],
           onTap: selectIndex,
-          backgroundColor: const Color.fromARGB(255, 3, 73, 131),
+          backgroundColor: const Color.fromARGB(255, 7, 15, 24),
           selectedItemColor: Colors.amber,
           currentIndex: _index,
         ),

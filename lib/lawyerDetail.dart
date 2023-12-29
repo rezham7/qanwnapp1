@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -52,7 +53,7 @@ class _LawyerDetailState extends State<LawyerDetail> {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: imageProvider,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.cover , 
                     ),
                   ),
                 ),
@@ -153,10 +154,10 @@ class _LawyerDetailState extends State<LawyerDetail> {
           ),
           GestureDetector(
             onTap: () async {
-              final Uri _url = Uri.parse('tel:${widget.phonenumber}');
+              final Uri url = Uri.parse('tel:${widget.phonenumber}');
 
-              if (!await launchUrl(_url)) {
-                throw Exception('Could not launch $_url');
+              if (!await launchUrl(url)) {
+                throw Exception('Could not launch $url');
               }
             },
             child: Container(
@@ -176,10 +177,11 @@ class _LawyerDetailState extends State<LawyerDetail> {
           ),
           GestureDetector(
             onTap: () async {
-              final Uri _url = Uri.parse('https://wa.me/${widget.phonenumber}');
+              final Uri url =
+                  Uri.parse('whatsapp://send?phone=${widget.phonenumber}');
 
-              if (!await launchUrl(_url)) {
-                throw Exception('Could not launch $_url');
+              if (!await launchUrl(url)) {
+                throw Exception('Could not launch $url');
               }
             },
             child: Container(

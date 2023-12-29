@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:qanwnapp/lawyerDetail.dart';
+import 'package:qanwnapp1/lawyerDetail.dart';
 
 class Lawyer extends StatefulWidget {
   const Lawyer({super.key});
@@ -21,7 +21,7 @@ class _LawyerState extends State<Lawyer> {
             height: 60,
             width: 800,
             color: Colors.cyan,
-            padding: EdgeInsets.only(bottom: 15, top: 10),
+            padding: const EdgeInsets.only(bottom: 15, top: 10),
             child: Center(
               child: Text(
                 'lawyers',
@@ -93,8 +93,8 @@ class _LawyerState extends State<Lawyer> {
                                       //     border: Border.all(
                                       //         width: 5,
                                       //         color: Colors.blueAccent)),
-                                      height: 70,
-                                      width: 70,
+                                      height: 100,
+                                      width: 100,
                                       // child: Image.network(
                                       //   data!['url'],
                                       //   fit: BoxFit.cover,
@@ -119,7 +119,7 @@ class _LawyerState extends State<Lawyer> {
                                     ),
                                   ),
                                   Container(
-                                    margin: EdgeInsets.only(right: 20),
+                                    margin: const EdgeInsets.only(right: 20),
                                     child: Column(
                                       children: [
                                         Text(
