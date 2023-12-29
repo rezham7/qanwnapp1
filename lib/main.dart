@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:qanwnapp1/court.dart';
 import 'package:qanwnapp1/home_page.dart';
 import 'package:qanwnapp1/lawyers.dart';
-import 'package:qanwnapp1/menu_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -39,7 +38,7 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  List<Widget> pages = [const HomePage(), const Lawyer(), const menuPage(),const court()];
+  List<Widget> pages = [const HomePage(), const Lawyer(), const court()];
 
   int _index = 0;
 
@@ -69,12 +68,15 @@ class _BottomNavigationState extends State<BottomNavigation> {
               label: 'پارێزەران',
             ),
             BottomNavigationBarItem(
-                icon: Image.asset(
-                  'assets/icons/attorney.png',
-                  height: 30,
-                  color: const Color(0xffEABF4E),
-                ),
-                label: 'دادگاکان')
+              icon: Image.asset(
+                'assets/icons/attorney.png',
+                height: 30,
+                color: const Color(0xffEABF4E),
+              ),
+              label: 'پارێزەران',
+            ),
+            
+            
           ],
           onTap: selectIndex,
           backgroundColor: const Color.fromARGB(255, 7, 15, 24),
