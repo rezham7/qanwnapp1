@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, file_names
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +8,12 @@ class courtDetail extends StatefulWidget {
   final String url;
   final String address;
   final String about;
-  const courtDetail({super.key, required this.name, required this.url, required this.address, required this.about});
+  const courtDetail(
+      {super.key,
+      required this.name,
+      required this.url,
+      required this.address,
+      required this.about});
 
   @override
   State<courtDetail> createState() => _courtDetailState();
@@ -23,7 +28,10 @@ class _courtDetailState extends State<courtDetail> {
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              Text("name"),
+              Container(
+                margin: const EdgeInsets.only(right: 120),
+                child: const Text('title'),
+              ),
               ElevatedButton(
                   onPressed: () {
                     Navigator.pop(context);
@@ -34,16 +42,8 @@ class _courtDetailState extends State<courtDetail> {
           ClipRRect(
             borderRadius: BorderRadius.circular(15),
             child: SizedBox(
-              // decoration: BoxDecoration(
-              //     border: Border.all(
-              //         width: 5,
-              //         color: Colors.blueAccent)),
-              height: 100,
+              height: 200,
               width: 100,
-              // child: Image.network(
-              //   data!['url'],
-              //   fit: BoxFit.cover,
-              // ),
               child: CachedNetworkImage(
                 imageUrl: widget.url,
                 imageBuilder: (context, imageProvider) => Container(
@@ -61,8 +61,7 @@ class _courtDetailState extends State<courtDetail> {
               ),
             ),
           ),
-          
-            Directionality(
+          Directionality(
             textDirection: TextDirection.rtl,
             child: Container(
               margin: const EdgeInsets.only(top: 30, right: 20),
@@ -106,6 +105,29 @@ class _courtDetailState extends State<courtDetail> {
                   ),
                 ],
               ),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: const Color.fromARGB(255, 0, 0, 0),
+              border: Border.all(
+                  color: const Color.fromARGB(255, 194, 57, 57), width: 1.5),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  widget.about,
+                  style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                  textAlign: TextAlign.right,
+                ),
+              ],
             ),
           ),
         ],

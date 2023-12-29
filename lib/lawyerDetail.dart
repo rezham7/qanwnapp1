@@ -33,6 +33,7 @@ class _LawyerDetailState extends State<LawyerDetail> {
               Container(
                 margin: const EdgeInsets.only(right: 120),
                 child: const Text('title'),
+                
               ),
               ElevatedButton(
                   onPressed: () {
