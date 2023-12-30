@@ -3,6 +3,7 @@ import 'package:qanwnapp1/court.dart';
 import 'package:qanwnapp1/home_page.dart';
 import 'package:qanwnapp1/lawyers.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:sizer/sizer.dart';
 import 'firebase_options.dart';
 
 Future<void> main() async {
@@ -18,16 +19,18 @@ class MyApp extends StatelessWidget {
 //eertertdy
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-            seedColor: const Color.fromARGB(204, 201, 10, 26)),
-        useMaterial3: true,
-      ),
-      home: BottomNavigation(),
-    );
+    return Sizer(builder: (context, orientation, deviceType) {
+      return MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(
+              seedColor: const Color.fromARGB(204, 201, 10, 26)),
+          useMaterial3: true,
+        ),
+        home: BottomNavigation(),
+      );
+    });
   }
 }
 
@@ -38,7 +41,12 @@ class BottomNavigation extends StatefulWidget {
 }
 
 class _BottomNavigationState extends State<BottomNavigation> {
-  List<Widget> pages = [const HomePage(), const Lawyer(), const court()];
+  List<Widget> pages = [
+    const HomePage(),
+    const Lawyer(),
+    const court(),
+    const court()
+  ];
 
   int _index = 0;
 
@@ -75,9 +83,17 @@ class _BottomNavigationState extends State<BottomNavigation> {
               ),
               label: 'پارێزەران',
             ),
-            
-            
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                'assets/icons/attorney.png',
+                height: 30,
+                color: const Color(0xffEABF4E),
+              ),
+              label: 'پارێزەراaن',
+            ),
           ],
+          type: BottomNavigationBarType.fixed, // Fixed
+
           onTap: selectIndex,
           backgroundColor: const Color.fromARGB(255, 7, 15, 24),
           selectedItemColor: Colors.amber,
