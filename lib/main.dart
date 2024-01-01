@@ -77,19 +77,19 @@ class _BottomNavigationState extends State<BottomNavigation> {
             ),
             BottomNavigationBarItem(
               icon: Image.asset(
-                'assets/icons/attorney.png',
+                'assets/icons/court.png',
                 height: 30,
                 color: const Color(0xffEABF4E),
               ),
-              label: 'پارێزەران',
+              label: 'دادگاکان',
             ),
             BottomNavigationBarItem(
               icon: Image.asset(
-                'assets/icons/attorney.png',
+                'assets/icons/auction.png',
                 height: 30,
                 color: const Color(0xffEABF4E),
               ),
-              label: 'پارێزەراaن',
+              label: 'یاساکان',
             ),
           ],
           type: BottomNavigationBarType.fixed, // Fixed

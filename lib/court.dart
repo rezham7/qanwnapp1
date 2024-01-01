@@ -17,26 +17,26 @@ class _courtState extends State<court> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 740,
+      height: 740.h,
       child: Column(
         children: [
           Container(
             height: 60,
             width: 800,
-            color: Colors.cyan,
+            color: const Color.fromARGB(255, 122, 140, 143),
             padding: const EdgeInsets.only(bottom: 15, top: 10),
-            child: Center(
+            child: const Center(
               child: Text(
-                'lawyers',
+                'دادگاکان',
                 style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.blue[900],
+                    fontSize: 20,
+                    color: Color.fromARGB(255, 35, 38, 43),
                     fontWeight: FontWeight.bold),
               ),
             ),
           ),
           Container(
-            color: Colors.black,
+            color: const Color.fromARGB(255, 68, 53, 53),
             height: 540,
             width: 800,
             child: FutureBuilder(
@@ -48,8 +48,9 @@ class _courtState extends State<court> {
                     return Center(
                       child: Text(
                         '${snapshot.error} occurred',
-                        style:
-                            const TextStyle(fontSize: 18, color: Colors.white),
+                        style: const TextStyle(
+                            fontSize: 18,
+                            color: Color.fromARGB(255, 255, 255, 255)),
                       ),
                     );
 
@@ -57,8 +58,9 @@ class _courtState extends State<court> {
                   } else if (snapshot.hasData) {
                     // Extracting data from snapshot object
                     return GridView.builder(
-                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2),
                       itemCount: snapshot.data?.size ?? 0,
                       itemBuilder: (context, index) {
                         final data = snapshot.data?.docs[index];
@@ -78,16 +80,17 @@ class _courtState extends State<court> {
                             child: Container(
                               width: 35.w,
                               padding: const EdgeInsets.symmetric(
-                                  vertical: 12, horizontal: 12),
+                                  vertical: 9, horizontal: 9),
                               margin: EdgeInsets.only(
-                                  bottom: 24, right: 5.w, left: 5.w, top: 5.w),
+                                  bottom: 20, right: 5.w, left: 5.w, top: 5.w),
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: const Color.fromARGB(255, 185, 166, 166),
                                 border: Border.all(
-                                  color: const Color(0xffEABF4E),
-                                  width: 3,
+                                  color:
+                                      const Color.fromARGB(255, 133, 113, 62),
+                                  width: 5,
                                 ),
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: BorderRadius.circular(13),
                               ),
                               child: Column(
                                 children: [
@@ -101,7 +104,7 @@ class _courtState extends State<court> {
                                         //         width: 5,
                                         //         color: Colors.blueAccent)),
                                         height: 13.h,
-                                        width: 40.w,
+                                        width: 120.w,
                                         // child: Image.network(
                                         //   data!['url'],
                                         //   fit: BoxFit.cover,
