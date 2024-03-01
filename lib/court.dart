@@ -30,7 +30,7 @@ class _courtState extends State<court> {
                 'دادگاکان',
                 style: TextStyle(
                     fontSize: 20,
-                    color: Color.fromARGB(255, 35, 38, 43),
+                    color: Color.fromARGB(255, 22, 23, 26),
                     fontWeight: FontWeight.bold),
               ),
             ),

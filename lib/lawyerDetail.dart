@@ -32,7 +32,7 @@ class _LawyerDetailState extends State<LawyerDetail> {
             children: [
               Container(
                 margin: const EdgeInsets.only(right: 120),
-                child: const Text('title'),
+                child: const Text('زانیاری کەسی'),
                 
               ),
               ElevatedButton(
@@ -136,7 +136,7 @@ class _LawyerDetailState extends State<LawyerDetail> {
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color: const Color.fromARGB(255, 0, 0, 0),
+              color: const Color.fromARGB(255, 56, 53, 53),
               border: Border.all(color: Colors.white, width: 0.7),
             ),
             child: Column(

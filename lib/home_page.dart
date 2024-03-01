@@ -11,50 +11,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<Map<String, dynamic>> rules = [
-    //{
-      //'text': 'دەستوور',
-      //'info': 'Rule 1 jshdjsds',
-      //'rules': [
-        //{
-          //'title': 'ماددەی١',
-         // 'content': "پیک هاتوە لەمشتانە قادگهفژگژزفههگکنکفگدگفهفگدسفسدگ"
-       // },
-        //{'title': 'title2', 'content': "content2"},
-        //{'title': 'title3', 'content': "content3"}
-      //]
-    //},
-    // {
-    //   'text': 'قانون',
-    //   'info': 'Rule 2 jshdjsds',
-    // },
-    // {
-    //   'text': 'اagwh',
-    //   'info': 'Rule 3 jshdjsds',
-    // },
-    // {
-    //   'text': 'Rule 5',
-    //   'info': 'Rule 5 jshdjsds',
-    // },
-    // {
-    //   'text': 'Rule 6',
-    //   'info': 'Rule 6 jshdjsds',
-    // },
-    // {
-    //   'text': 'Rule 7',
-    //   'info': 'Rule 5 jshdjsds',
-    // },
-    // {
-    //   'text': 'Rule 8',
-    //   'info': 'Rule 5 jshdjsds',
-    // },
-    // {
-    //   'text': 'Rule ',
-    //   'info': 'Rule 5 jshdjsds',
-    // },
-    // {
-    //   'text': 'Rule 5',
-    //   'info': 'Rule 5 jshdjsds',
-    // },
+
   ];
   @override
   Widget build(BuildContext context) {
@@ -63,12 +20,12 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: const Text('قانوونەکان'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: const Color.fromARGB(255, 158, 181, 201),
         ),
-        backgroundColor: const Color.fromARGB(255, 15, 15, 29),
+        backgroundColor: const Color.fromARGB(255, 17, 17, 36),
         body: Container(
           padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
-          child: Column(
+          child: ListView(
             children: <Widget>[
               const SizedBox(
                 height: 15,
@@ -99,7 +56,7 @@ class _HomePageState extends State<HomePage> {
                   Container(
                       padding: const EdgeInsets.symmetric(horizontal: 7),
                       decoration: const BoxDecoration(
-                          color: Color.fromARGB(255, 148, 143, 143),
+                          color: Color.fromARGB(255, 255, 234, 234),
                           borderRadius: BorderRadius.all(Radius.circular(25))),
                       child: IconButton(
                         onPressed: () {},
@@ -112,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                 height: 15,
               ),
               SizedBox(
-                height: 400,
+                height: 460,
                 child: FutureBuilder(
                   future: FirebaseFirestore.instance.collection('qanun').get(),
                   builder: (context, snapshot) {
@@ -123,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                           child: Text(
                             '${snapshot.error} occurred',
                             style: const TextStyle(
-                                fontSize: 18, color: Colors.white),
+                                fontSize: 18, color: Color.fromARGB(255, 126, 86, 86)),
                           ),
                         );
 
@@ -177,34 +134,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               )
-              // Expanded(
-              //   child: ListView.builder(
-              //     itemCount: rules.length, //9
-              //     itemBuilder: (context, index) {
-              //       print('index: $index, text: ${rules[index]['text']}');
-              //       return RuleCard(
-              //         text: rules[index]['text'],
-              //         // text: 'AAA',
-
-              //         onTab: () {
-              //           print('onTap');
-              //           Navigator.push(
-              //             context,
-              //             MaterialPageRoute(
-              //               builder: (context) => Rules(
-              //                 // text: rules[index]['text'],
-              //                 // info: rules[index]['info'],
-              //                 text: rules[index]['text'],
-              //                 info: rules[index]['info'],
-              //                 rulesList: rules[index]['rules'],
-              //               ),
-              //             ),
-              //           );
-              //         },
-              //       );
-              //     },
-              //   ),
-              // ),
+         
             ],
           ),
         ),

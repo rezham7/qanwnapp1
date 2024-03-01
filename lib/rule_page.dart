@@ -17,16 +17,16 @@ class Rules extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('مادەکان'),
-        backgroundColor: Color.fromARGB(255, 0, 0, 0),
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
         foregroundColor: Colors.white,
       ),
       body: SafeArea(
           child: Container(
-        color: Color.fromARGB(255, 5, 6, 17),
+        color: const Color.fromARGB(255, 5, 6, 17),
         child: Column(
           children: [
-            Container(
-              height: 400,
+            SizedBox(
+              height: 620,
               child: FutureBuilder(
                 future: reference,
                 builder: (context, snapshot) {
@@ -36,7 +36,7 @@ class Rules extends StatelessWidget {
                       return Center(
                         child: Text(
                           '${snapshot.error} occurred',
-                          style: TextStyle(fontSize: 18, color: Colors.white),
+                          style: const TextStyle(fontSize: 18, color: Colors.white),
                         ),
                       );
 
@@ -86,43 +86,7 @@ class Rules extends StatelessWidget {
                 },
               ),
             )
-            // Expanded(
-            //   child: ListView.builder(
-            //     itemCount: rulesList.length,
-            //     itemBuilder: (context, index) {
-            //       return Container(
-            //         margin: const EdgeInsets.symmetric(
-            //             horizontal: 20, vertical: 10),
-            //         padding: const EdgeInsets.all(20),
-            //         decoration: BoxDecoration(
-            //           borderRadius: BorderRadius.circular(10),
-            //           color: Color.fromARGB(255, 0, 0, 0),
-            //           border: Border.all(color: Colors.white, width: 0.7),
-            //         ),
-            //         child: Column(
-            //           crossAxisAlignment: CrossAxisAlignment.end,
-            //           children: [
-            //             Text(
-            //               '${rulesList[index]['title']}',
-            //               style: const TextStyle(
-            //                   color: Colors.white,
-            //                   fontWeight: FontWeight.bold,
-            //                   fontSize: 24),
-            //             ),
-            //             Text(
-            //               rulesList[index]['content']!,
-            //               style: const TextStyle(
-            //                   color: Colors.white,
-            //                   fontWeight: FontWeight.bold,
-            //                   fontSize: 20),
-            //               textAlign: TextAlign.right,
-            //             ),
-            //           ],
-            //         ),
-            //       );
-            //     },
-            //   ),
-            // )
+        
           ],
         ),
       )),

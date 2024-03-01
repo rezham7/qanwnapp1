@@ -45,7 +45,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
     const HomePage(),
     const Lawyer(),
     const court(),
-    const court()
+    
   ];
 
   int _index = 0;
@@ -83,14 +83,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
               ),
               label: 'دادگاکان',
             ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                'assets/icons/auction.png',
-                height: 30,
-                color: const Color(0xffEABF4E),
-              ),
-              label: 'یاساکان',
-            ),
+           
           ],
           type: BottomNavigationBarType.fixed, // Fixed
 
